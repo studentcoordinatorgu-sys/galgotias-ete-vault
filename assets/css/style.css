@@ -1,0 +1,598 @@
+/* assets/css/style.css */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Inter,Segoe UI,sans-serif;
+}
+
+:root{
+    --primary:#2563eb;
+    --secondary:#4f46e5;
+    --accent:#06b6d4;
+    --bg:#f7faff;
+    --card:#ffffff;
+    --text:#111827;
+    --muted:#6b7280;
+    --success:#22c55e;
+    --danger:#ef4444;
+}
+
+body{
+    background:var(--bg);
+    color:var(--text);
+    min-height:100vh;
+}
+
+.hidden{
+    display:none !important;
+}
+
+/* ========================= */
+/* VAULT SCREEN */
+/* ========================= */
+
+#vaultScreen{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:24px;
+    background:
+    radial-gradient(circle at top left,#dbeafe,#f8fafc),
+    radial-gradient(circle at bottom right,#cffafe,#ffffff);
+}
+
+.vault-card{
+    width:100%;
+    max-width:460px;
+    background:rgba(255,255,255,.8);
+    backdrop-filter:blur(14px);
+    border-radius:28px;
+    padding:40px 28px;
+    text-align:center;
+    box-shadow:
+    0 20px 40px rgba(0,0,0,.08);
+}
+
+.vault-logo{
+    width:90px;
+    height:90px;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    font-size:40px;
+    cursor:pointer;
+
+    background:
+    linear-gradient(
+    135deg,
+    var(--primary),
+    var(--secondary)
+    );
+
+    color:#fff;
+    margin-bottom:20px;
+
+    transition:.3s;
+}
+
+.vault-logo:hover{
+    transform:scale(1.05);
+}
+
+.vault-card h1{
+    font-size:28px;
+    margin-bottom:10px;
+}
+
+.vault-card p{
+    color:var(--muted);
+    line-height:1.6;
+}
+
+.status-online{
+    margin-top:20px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:8px;
+}
+
+.dot{
+    width:10px;
+    height:10px;
+    border-radius:50%;
+    background:var(--success);
+}
+
+.pin-container{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    margin-top:30px;
+}
+
+.pin-box{
+    width:58px;
+    height:58px;
+    border:none;
+    outline:none;
+    text-align:center;
+    font-size:22px;
+    font-weight:700;
+
+    border-radius:14px;
+
+    background:#fff;
+
+    box-shadow:
+    0 8px 20px rgba(0,0,0,.08);
+}
+
+#unlockBtn{
+    margin-top:25px;
+
+    border:none;
+    cursor:pointer;
+
+    padding:14px 28px;
+
+    border-radius:14px;
+
+    color:#fff;
+
+    background:
+    linear-gradient(
+    135deg,
+    var(--primary),
+    var(--secondary)
+    );
+
+    font-weight:600;
+}
+
+#unlockBtn:hover{
+    opacity:.9;
+}
+
+#vaultMessage{
+    margin-top:18px;
+    font-weight:600;
+}
+
+/* ========================= */
+/* LOADER */
+/* ========================= */
+
+#loaderScreen{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.loader-box{
+    text-align:center;
+}
+
+.vault-wheel{
+    font-size:70px;
+    margin:30px 0;
+
+    animation:
+    spin 1.5s linear infinite;
+}
+
+@keyframes spin{
+    from{
+        transform:rotate(0deg);
+    }
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+.progress{
+    width:320px;
+    max-width:90vw;
+    height:10px;
+
+    border-radius:999px;
+    overflow:hidden;
+
+    background:#e5e7eb;
+}
+
+.progress-fill{
+    width:100%;
+    height:100%;
+
+    background:
+    linear-gradient(
+    90deg,
+    var(--primary),
+    var(--accent)
+    );
+
+    animation:
+    progressMove 2.5s linear;
+}
+
+@keyframes progressMove{
+    from{
+        width:0;
+    }
+
+    to{
+        width:100%;
+    }
+}
+
+/* ========================= */
+/* HERO */
+/* ========================= */
+
+.hero{
+    text-align:center;
+    padding:60px 20px 40px;
+}
+
+.hero h1{
+    font-size:38px;
+}
+
+.hero p{
+    margin-top:10px;
+    color:var(--muted);
+}
+
+#shareBtn{
+    margin-top:20px;
+
+    border:none;
+    cursor:pointer;
+
+    color:#fff;
+
+    padding:12px 24px;
+
+    border-radius:12px;
+
+    background:
+    linear-gradient(
+    135deg,
+    var(--secondary),
+    var(--accent)
+    );
+}
+
+/* ========================= */
+/* SEMESTERS */
+/* ========================= */
+
+.semester-grid{
+    width:min(1200px,92%);
+    margin:auto;
+
+    display:grid;
+    gap:22px;
+}
+
+.semester-card{
+    background:#fff;
+
+    border-radius:24px;
+
+    padding:24px;
+
+    box-shadow:
+    0 10px 24px rgba(0,0,0,.06);
+}
+
+.semester-card h2,
+.semester-card h3{
+    margin-bottom:8px;
+}
+
+.semester-card p{
+    color:var(--muted);
+}
+
+.disabled{
+    opacity:.7;
+}
+
+.locked{
+    border-left:6px solid var(--danger);
+}
+
+.active{
+    border-left:6px solid var(--success);
+}
+
+.current-tag{
+    display:inline-block;
+
+    padding:8px 14px;
+
+    border-radius:999px;
+
+    background:#dcfce7;
+    color:#166534;
+
+    font-size:12px;
+    font-weight:700;
+
+    margin-bottom:15px;
+}
+
+/* ========================= */
+/* SUBJECTS */
+/* ========================= */
+
+.subject-list{
+    margin-top:20px;
+
+    display:grid;
+
+    gap:18px;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(240px,1fr));
+}
+
+.subject-card{
+    position:relative;
+
+    background:#f9fbff;
+
+    border-radius:20px;
+
+    padding:22px;
+
+    border:1px solid #e5e7eb;
+
+    transition:.25s;
+}
+
+.subject-card:hover{
+    transform:translateY(-4px);
+}
+
+.subject-card h3{
+    margin-top:18px;
+}
+
+.latest-badge{
+    position:absolute;
+
+    top:14px;
+    right:14px;
+
+    background:#fef3c7;
+    color:#92400e;
+
+    padding:6px 10px;
+
+    border-radius:999px;
+
+    font-size:11px;
+    font-weight:700;
+}
+
+.download-btn{
+    margin-top:18px;
+
+    display:inline-block;
+
+    text-decoration:none;
+
+    color:#fff;
+
+    padding:12px 20px;
+
+    border-radius:12px;
+
+    background:
+    linear-gradient(
+    135deg,
+    var(--primary),
+    var(--secondary)
+    );
+}
+
+/* ========================= */
+/* REQUEST */
+/* ========================= */
+
+.request-section{
+    width:min(700px,92%);
+    margin:70px auto;
+}
+
+.request-section h2{
+    text-align:center;
+    margin-bottom:25px;
+}
+
+.request-section form{
+    background:#fff;
+
+    padding:26px;
+
+    border-radius:22px;
+
+    box-shadow:
+    0 10px 24px rgba(0,0,0,.06);
+}
+
+.request-section input,
+.request-section textarea{
+    width:100%;
+
+    border:1px solid #d1d5db;
+
+    padding:14px;
+
+    border-radius:12px;
+
+    margin-bottom:14px;
+
+    outline:none;
+}
+
+.request-section textarea{
+    resize:none;
+    min-height:130px;
+}
+
+.request-section button{
+    width:100%;
+
+    border:none;
+
+    color:#fff;
+
+    padding:14px;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    background:
+    linear-gradient(
+    135deg,
+    var(--primary),
+    var(--secondary)
+    );
+}
+
+/* ========================= */
+/* FOOTER */
+/* ========================= */
+
+footer{
+    padding:30px 20px;
+    text-align:center;
+    color:var(--muted);
+}
+
+/* ========================= */
+/* SHARE MENU */
+/* ========================= */
+
+.share-menu{
+    position:fixed;
+
+    bottom:25px;
+    right:25px;
+
+    display:flex;
+    flex-direction:column;
+
+    gap:10px;
+
+    z-index:1000;
+}
+
+.share-menu button{
+    border:none;
+    cursor:pointer;
+
+    color:#fff;
+
+    padding:12px 18px;
+
+    border-radius:12px;
+
+    background:
+    linear-gradient(
+    135deg,
+    var(--secondary),
+    var(--accent)
+    );
+}
+
+/* ========================= */
+/* ADMIN */
+/* ========================= */
+
+.admin-popup{
+    position:fixed;
+    inset:0;
+
+    background:
+    rgba(0,0,0,.45);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    z-index:2000;
+}
+
+.admin-box{
+    background:#fff;
+
+    width:90%;
+    max-width:420px;
+
+    border-radius:24px;
+
+    padding:30px;
+
+    text-align:center;
+}
+
+.admin-box h2{
+    margin-bottom:12px;
+}
+
+.admin-box button{
+    margin-top:20px;
+
+    border:none;
+    cursor:pointer;
+
+    color:#fff;
+
+    padding:12px 20px;
+
+    border-radius:12px;
+
+    background:
+    linear-gradient(
+    135deg,
+    var(--primary),
+    var(--secondary)
+    );
+}
+
+/* ========================= */
+/* MOBILE */
+/* ========================= */
+
+@media(max-width:600px){
+
+    .hero h1{
+        font-size:30px;
+    }
+
+    .pin-box{
+        width:50px;
+        height:50px;
+    }
+
+    .vault-card{
+        padding:30px 20px;
+    }
+
+    .subject-list{
+        grid-template-columns:1fr;
+    }
+
+}

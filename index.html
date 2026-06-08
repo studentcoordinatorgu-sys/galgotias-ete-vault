@@ -1,0 +1,354 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galgotias ETE Resource Vault</title>
+
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- Google Analytics -->
+  <!-- G-MW04R61D6D ko baad me replace karna -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MW04R61D6D"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-MW04R61D6D');
+  </script>
+</head>
+<body>
+
+  <!-- ========================= -->
+  <!-- RESOURCE VAULT SCREEN -->
+  <!-- ========================= -->
+
+  <section id="vaultScreen">
+
+    <div class="vault-card">
+
+      <div id="vaultLogo" class="vault-logo">
+        🔒
+      </div>
+
+      <h1>Galgotias ETE Resource Vault</h1>
+
+      <p>
+        Regular Exams (ETE)<br>
+        June - July 2026
+      </p>
+
+      <div class="status-online">
+        <span class="dot"></span>
+        Resource Vault Online
+      </div>
+
+      <div class="pin-container">
+        <input maxlength="1" class="pin-box">
+        <input maxlength="1" class="pin-box">
+        <input maxlength="1" class="pin-box">
+        <input maxlength="1" class="pin-box">
+      </div>
+
+      <button id="unlockBtn">
+        Unlock Vault
+      </button>
+
+      <p id="vaultMessage"></p>
+
+    </div>
+
+  </section>
+
+  <!-- ========================= -->
+  <!-- LOADER -->
+  <!-- ========================= -->
+
+  <section id="loaderScreen" class="hidden">
+
+    <div class="loader-box">
+
+      <h2>Authenticating Resource Access...</h2>
+
+      <div class="vault-wheel">
+        ⚙️
+      </div>
+
+      <div class="progress">
+        <div class="progress-fill"></div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ========================= -->
+  <!-- MAIN DASHBOARD -->
+  <!-- ========================= -->
+
+  <main id="dashboard" class="hidden">
+
+    <!-- HEADER -->
+
+    <header class="hero">
+
+      <h1>Galgotias University</h1>
+
+      <p>
+        Regular Exams (ETE)<br>
+        June - July 2026
+      </p>
+
+      <button id="shareBtn">
+        Share Portal
+      </button>
+
+    </header>
+
+    <!-- SEMESTERS -->
+
+    <section class="semester-grid">
+
+      <div class="semester-card disabled">
+        <h3>Semester 1</h3>
+        <p>Previous Session Closed</p>
+      </div>
+
+      <div class="semester-card disabled">
+        <h3>Semester 2</h3>
+        <p>Previous Session Closed</p>
+      </div>
+
+      <div class="semester-card disabled">
+        <h3>Semester 3</h3>
+        <p>Previous Session Closed</p>
+      </div>
+
+      <!-- ACTIVE -->
+
+      <div class="semester-card active">
+
+        <div class="current-tag">
+          CURRENT ACTIVE SEMESTER
+        </div>
+
+        <h2>Semester 4</h2>
+
+        <div class="subject-list">
+
+          <!-- ML -->
+
+          <div class="subject-card">
+
+            <span class="latest-badge">
+              LATEST
+            </span>
+
+            <h3>Machine Learning</h3>
+
+            <a
+              href="assets/pdfs/machine-learning.pdf"
+              download
+              class="download-btn"
+            >
+              Download PDF
+            </a>
+
+          </div>
+
+          <!-- JAVA -->
+
+          <div class="subject-card">
+
+            <span class="latest-badge">
+              LATEST
+            </span>
+
+            <h3>Java Programming</h3>
+
+            <a
+              href="assets/pdfs/java-programming.pdf"
+              download
+              class="download-btn"
+            >
+              Download PDF
+            </a>
+
+          </div>
+
+          <!-- MAD -->
+
+          <div class="subject-card">
+
+            <span class="latest-badge">
+              LATEST
+            </span>
+
+            <h3>Mobile Application Development</h3>
+
+            <a
+              href="assets/pdfs/mobile-application-development.pdf"
+              download
+              class="download-btn"
+            >
+              Download PDF
+            </a>
+
+          </div>
+
+          <!-- NLP -->
+
+          <div class="subject-card">
+
+            <span class="latest-badge">
+              LATEST
+            </span>
+
+            <h3>Natural Language Processing</h3>
+
+            <a
+              href="assets/pdfs/natural-language-processing.pdf"
+              download
+              class="download-btn"
+            >
+              Download PDF
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="semester-card locked">
+        <h3>Semester 5</h3>
+        <p>You can't access future semester resources yet.</p>
+      </div>
+
+      <div class="semester-card locked">
+        <h3>Semester 6</h3>
+        <p>You can't access future semester resources yet.</p>
+      </div>
+
+    </section>
+
+    <!-- REQUEST FORM -->
+
+    <section class="request-section">
+
+      <h2>Request Important Questions</h2>
+
+      <form
+        action="https://api.web3forms.com/submit"
+        method="POST"
+      >
+
+        <!-- WEB3FORMS ACCESS KEY YAHAN DALNI HOGI -->
+        <input
+          type="hidden"
+          name="access_key"
+          value="YOUR_WEB3FORMS_KEY"
+        >
+
+        <input
+          type="hidden"
+          name="subject"
+          value="New Subject Request - ETE Portal"
+        >
+
+        <input
+          type="hidden"
+          name="redirect"
+          value="#"
+        >
+
+        <input
+          type="text"
+          name="semester"
+          placeholder="Semester"
+          required
+        >
+
+        <input
+          type="text"
+          name="subject_name"
+          placeholder="Subject Name"
+          required
+        >
+
+        <textarea
+          name="message"
+          placeholder="Write your request"
+          required
+        ></textarea>
+
+        <button type="submit">
+          Submit Request
+        </button>
+
+      </form>
+
+    </section>
+
+    <!-- FOOTER -->
+
+    <footer>
+
+      <p>
+        © 2026 Krishna CR. All Rights Reserved.
+      </p>
+
+    </footer>
+
+  </main>
+
+  <!-- SHARE MENU -->
+
+  <div id="shareMenu" class="share-menu hidden">
+
+    <button data-share="whatsapp">
+      WhatsApp
+    </button>
+
+    <button data-share="telegram">
+      Telegram
+    </button>
+
+    <button data-share="instagram">
+      Instagram
+    </button>
+
+    <button data-share="copy">
+      Copy Link
+    </button>
+
+  </div>
+
+  <!-- ADMIN POPUP -->
+
+  <div id="adminPopup" class="hidden admin-popup">
+
+    <div class="admin-box">
+
+      <h2>Admin Mode Activated</h2>
+
+      <p>
+        Welcome Krishna CR
+      </p>
+
+      <button id="closeAdmin">
+        Close
+      </button>
+
+    </div>
+
+  </div>
+
+  <script src="assets/js/vault.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/share.js"></script>
+  <script src="assets/js/admin.js"></script>
+
+</body>
+</html>
