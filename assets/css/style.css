@@ -250,25 +250,6 @@ body{
     color:var(--muted);
 }
 
-#shareBtn{
-    margin-top:20px;
-
-    border:none;
-    cursor:pointer;
-
-    color:#fff;
-
-    padding:12px 24px;
-
-    border-radius:12px;
-
-    background:
-    linear-gradient(
-    135deg,
-    var(--secondary),
-    var(--accent)
-    );
-}
 
 /* ========================= */
 /* SEMESTERS */
@@ -497,24 +478,6 @@ footer{
     gap:10px;
 
     z-index:1000;
-}
-
-.share-menu button{
-    border:none;
-    cursor:pointer;
-
-    color:#fff;
-
-    padding:12px 18px;
-
-    border-radius:12px;
-
-    background:
-    linear-gradient(
-    135deg,
-    var(--secondary),
-    var(--accent)
-    );
 }
 
 /* ========================= */
